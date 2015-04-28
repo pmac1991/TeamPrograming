@@ -9,6 +9,7 @@
 			<tr>
 <!-- 				<div align="center"> -->
 					<img src="logo.png">
+					<img src="logo.png">
 <!-- 				</div> -->
 			</tr>
 			<tr>
