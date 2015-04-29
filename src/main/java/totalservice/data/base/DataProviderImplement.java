@@ -1,6 +1,9 @@
 package totalservice.data.base;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,12 +19,43 @@ public class DataProviderImplement implements DataProvider {
 	
 	
 	
-	public List<User> selectUser(String query) {
+	public List<User> selectUser(String query) throws SQLException {
 		// TODO Auto-generated method stub
-		return null;
+		List<User> result = new ArrayList<User>();
+		
+		query="select * from totalservice.users";
+		Statement statement = connection.createStatement();
+		ResultSet resultSet = statement.executeQuery(query);
+		
+        while (resultSet.next()) {
+        	int ID = resultSet.getInt("iduser");
+            String name = resultSet.getString("name");
+            String surname = resultSet.getString("sername");
+            String telephoneNum = resultSet.getString("telephone");
+            String dateOfBirth = resultSet.getString("");
+            String email = resultSet.getString("email");
+            
+            User tempUs = new User();
+            
+            tempUs.setId(ID);
+            tempUs.setName(name);
+            tempUs.setSername(surname);
+            tempUs.setTelephoneNom(telephoneNum);
+            
+            result.add(tempUs);
+            
+        }
+		
+		return result;
 	}
-	public boolean addUser(User user) {
+	public boolean addUser(User user) throws SQLException {
 		// TODO Auto-generated method stub
+		
+		String query = "insert into totalservice.users values(" + Integer.toString(user.getId()) + 
+				" " + user.getName() + " " + user.getSername() + " " + user.getTelephoneNom() + " " + user.getDateOfBorn() + ");";
+		Statement statement = connection.createStatement();
+		ResultSet resultSet = statement.executeQuery(query);
+		
 		return false;
 	}
 	public boolean editUser(User user, int id) {
