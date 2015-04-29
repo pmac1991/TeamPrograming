@@ -4,9 +4,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="site.css" rel="stylesheet">
 <title>Insert title here</title>
 </head>
 <body>
+<div align="center">
 ${title}
+</div>
+<div align="center">
+<br>
+<form action="">
+Login:<br>
+<input type="text" name="login">
+<br>
+password:<br>
+<input type="text" name="password">
+</form>
+</div>
 </body>
 </html>
