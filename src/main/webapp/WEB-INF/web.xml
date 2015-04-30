@@ -19,6 +19,15 @@
     <url-pattern>/firms</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>RegisterFirmServlet</servlet-name>
+    <servlet-class>totalservice.servlets.RegisterFirmServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterFirmsServlet</servlet-name>
+    <url-pattern>/registerfirm</url-pattern>
+  </servlet-mapping>
+  
 <!--   <servlet> -->
 <!--     <servlet-name>EditPhotoServlet</servlet-name> -->
 <!--     <servlet-class>amazon.servlets.EditPhotoServlet</servlet-class> -->

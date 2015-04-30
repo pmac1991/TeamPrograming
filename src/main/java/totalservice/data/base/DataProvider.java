@@ -13,7 +13,7 @@ public interface DataProvider {
 	boolean editUser(User user,int id);
 	public void deletUser(int id);
 	
-	public List<Firm> selectFirm(String query);
+	public List<Firm> selectFirm(String query) throws SQLException;
 	boolean addFirm(Firm user);
 	boolean editFirm(Firm user,int id);
 	public void deletFirm(int id);
