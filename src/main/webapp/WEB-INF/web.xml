@@ -28,6 +28,15 @@
     <url-pattern>/registerfirm</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>RegisterUserServlet</servlet-name>
+    <servlet-class>totalservice.servlets.RegisterUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterUserServlet</servlet-name>
+    <url-pattern>/registeruser</url-pattern>
+  </servlet-mapping>
+  
 <!--   <servlet> -->
 <!--     <servlet-name>EditPhotoServlet</servlet-name> -->
 <!--     <servlet-class>amazon.servlets.EditPhotoServlet</servlet-class> -->
