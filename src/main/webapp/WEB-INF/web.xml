@@ -24,8 +24,8 @@
     <servlet-class>totalservice.servlets.RegisterFirmServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>RegisterFirmsServlet</servlet-name>
-    <url-pattern>/registerfirm</url-pattern>
+    <servlet-name>RegisterFirmServlet</servlet-name>
+    <url-pattern>/Registerfirm</url-pattern>
   </servlet-mapping>
   
   <servlet>
@@ -34,7 +34,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>RegisterUserServlet</servlet-name>
-    <url-pattern>/registeruser</url-pattern>
+    <url-pattern>/Registeruser</url-pattern>
   </servlet-mapping>
   
 <!--   <servlet> -->
