@@ -7,7 +7,9 @@ public class User {
 	private String sername;
 	private Date dateOfBorn;
 	private String telephoneNom;
+	private String email;
 	private int id;
+	private String passwrd;
 	
 	public String getName() {
 		return name;
@@ -38,6 +40,20 @@ public class User {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		
+		//TODO add email regex here !!!!
+		this.email = email;
+	}
+	public String getPasswrd() {
+		return passwrd;
+	}
+	public void setPasswrd(String passwrd) {
+		this.passwrd = passwrd;
 	}
 
 	

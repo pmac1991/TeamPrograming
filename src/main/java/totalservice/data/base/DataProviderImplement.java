@@ -55,6 +55,7 @@ public class DataProviderImplement implements DataProvider {
             String telephoneNum = resultSet.getString("telephone");
 //            String dateOfBirth = resultSet.getString("");
             String email = resultSet.getString("email");
+            String passwrd = resultSet.getString("password");
             
             User tempUs = new User();
             
@@ -62,6 +63,8 @@ public class DataProviderImplement implements DataProvider {
             tempUs.setName(name);
             tempUs.setSername(surname);
             tempUs.setTelephoneNom(telephoneNum);
+            tempUs.setEmail(email);
+            tempUs.setPasswrd(passwrd);
             
             result.add(tempUs);
             
@@ -73,7 +76,8 @@ public class DataProviderImplement implements DataProvider {
 		// TODO Auto-generated method stub
 		
 		String query = "insert into totalservice.users values(" + Integer.toString(user.getId()) + 
-				" " + user.getName() + " " + user.getSername() + " " + user.getTelephoneNom() + " " + user.getDateOfBorn() + ");";
+				" " + user.getName() + " " + user.getSername() + " " + user.getEmail() + " " + user.getPasswrd() + ""
+				+ user.getTelephoneNom() + " " + user.getDateOfBorn() + ");";
 		Statement statement = connection.createStatement();
 		ResultSet resultSet = statement.executeQuery(query);
 		

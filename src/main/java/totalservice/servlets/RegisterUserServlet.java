@@ -1,6 +1,10 @@
 package totalservice.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -8,6 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.http.HttpServerConnection;
+
+import totalservice.data.base.DataProviderImplement;
+import totalservice.models.user.User;
 
 public class RegisterUserServlet extends HttpServlet {
 	
@@ -27,6 +34,51 @@ public class RegisterUserServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String name = request.getParameter("first_name");
+		String surname = request.getParameter("last_name");
+		String email = request.getParameter("email");
+		String telephone = request.getParameter("telephone");
+		String passwrd = request.getParameter("passwrd");
+		
+		User incomingUser = new User();
+		incomingUser.setName(name);
+		incomingUser.setSername(surname);
+		incomingUser.setTelephoneNom(telephone);
+		incomingUser.setEmail(email);
+		incomingUser.setPasswrd(passwrd);
+		
+		String htmlResponse ;
+		
+		htmlResponse = name + surname + email + telephone;
+		
+		DataProviderImplement dp = new DataProviderImplement();
+		
+		List<User> currUsers = new ArrayList<User>();
+		
+		try {
+			currUsers = dp.selectUser("");
+			if(currUsers.contains(incomingUser)){
+				PrintWriter writer = response.getWriter();
+				
+				writer.println("User already exists!");
+			}
+			else{
+				incomingUser.setId(currUsers.size() + 1);
+				dp.addUser(incomingUser);
+				
+				PrintWriter writer = response.getWriter();
+				
+				writer.println("Operation succesfull!");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		PrintWriter writer = response.getWriter();
+		
+		writer.println(htmlResponse);
 	}
 
 
