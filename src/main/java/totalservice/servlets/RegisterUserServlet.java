@@ -51,7 +51,7 @@ public class RegisterUserServlet extends HttpServlet {
 		
 		htmlResponse = name + surname + email + telephone;
 		
-		DataProviderImplement dp = new DataProviderImplement();
+		DataProviderImplement dp = new DataProviderImplement().getInstance();
 		
 		List<User> currUsers = new ArrayList<User>();
 		

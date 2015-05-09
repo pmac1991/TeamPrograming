@@ -77,10 +77,10 @@ public class DataProviderImplement implements DataProvider {
 		
 		String query = "insert into totalservice.users values(" + Integer.toString(user.getId()) + 
 				" " + user.getName() + " " + user.getSername() + " " + user.getEmail() + " " + user.getPasswrd() + ""
-				+ user.getTelephoneNom() + " " + user.getDateOfBorn() + ");";
+				+ user.getTelephoneNom() + " " + user.getDateOfBorn().toString() + ");";
 		Statement statement = connection.createStatement();
-		ResultSet resultSet = statement.executeQuery(query);
-		
+		//ResultSet resultSet = statement.executeQuery(query);
+		int resultSet = statement.executeUpdate(query);
 		return false;
 	}
 	public boolean editUser(User user, int id) {
