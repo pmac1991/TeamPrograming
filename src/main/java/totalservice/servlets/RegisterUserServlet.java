@@ -47,6 +47,8 @@ public class RegisterUserServlet extends HttpServlet {
 		incomingUser.setEmail(email);
 		incomingUser.setPasswrd(passwrd);
 		
+		PrintWriter writer = response.getWriter();
+		
 		String htmlResponse ;
 		
 		htmlResponse = name + surname + email + telephone;
@@ -58,7 +60,6 @@ public class RegisterUserServlet extends HttpServlet {
 		try {
 			currUsers = dp.selectUser("");
 			if(currUsers.contains(incomingUser)){
-				PrintWriter writer = response.getWriter();
 				
 				writer.println("User already exists!");
 			}
@@ -66,17 +67,14 @@ public class RegisterUserServlet extends HttpServlet {
 				incomingUser.setId(currUsers.size() + 1);
 				dp.addUser(incomingUser);
 				
-				PrintWriter writer = response.getWriter();
 				
 				writer.println("Operation succesfull!");
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			writer.println(e.getMessage());
 		}
-		
-		
-		PrintWriter writer = response.getWriter();
 		
 		writer.println(htmlResponse);
 	}

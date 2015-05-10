@@ -75,9 +75,9 @@ public class DataProviderImplement implements DataProvider {
 	public boolean addUser(User user) throws SQLException {
 		// TODO Auto-generated method stub
 		
-		String query = "insert into totalservice.users values(" + Integer.toString(user.getId()) + 
-				" " + user.getName() + " " + user.getSername() + " " + user.getEmail() + " " + user.getPasswrd() + ""
-				+ user.getTelephoneNom() + " " + user.getDateOfBorn().toString() + ");";
+		String query = "insert into totalservice.users values( " + Integer.toString(user.getId()) + 
+				", '" + user.getName() + "', '" + user.getSername() + "', '" + user.getEmail() + "', '" + user.getPasswrd() + "', '"
+				+ user.getTelephoneNom() + "', " + "0 " + ");";//user.getDateOfBorn().toString() + ");";
 		Statement statement = connection.createStatement();
 		//ResultSet resultSet = statement.executeQuery(query);
 		int resultSet = statement.executeUpdate(query);
