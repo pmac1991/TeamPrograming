@@ -1,6 +1,8 @@
 package totalservice.models.user;
 
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class User {
 	private String name;
@@ -11,6 +13,16 @@ public class User {
 	private int id;
 	private String passwrd;
 	
+	private Pattern pattern;
+	private Matcher matcher;
+ 
+	private static final String EMAIL_PATTERN = 
+		"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+		+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+	
+	private static final String TELEPHONE_PATTERN = 
+			"^([0-9]{9})|(([0-9]{3}-){2}[0-9]{3})$";
+ 
 	public String getName() {
 		return name;
 	}
@@ -33,8 +45,19 @@ public class User {
 		return telephoneNom;
 	}
 	public void setTelephoneNom(String telephoneNom) {
-		this.telephoneNom = telephoneNom;
+		if(validateTelephone(telephoneNom)){
+			this.telephoneNom = telephoneNom;
+		}
+		else{
+			//TODO throw exception?
+		}	
 	}
+	private boolean validateTelephone(final String hex) { 
+		pattern = Pattern.compile(TELEPHONE_PATTERN);
+		matcher = pattern.matcher(hex);
+		return matcher.matches();
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -46,9 +69,20 @@ public class User {
 	}
 	public void setEmail(String email) {
 		
-		//TODO add email regex here !!!!
-		this.email = email;
+		if(validateEmail(email)){
+			this.email = email;	
+		}
+		else{
+			//TODO throw exception?
+		}		
 	}
+	
+	private boolean validateEmail(final String hex) { 
+		pattern = Pattern.compile(EMAIL_PATTERN);
+		matcher = pattern.matcher(hex);
+		return matcher.matches();
+	}
+	
 	public String getPasswrd() {
 		return passwrd;
 	}
