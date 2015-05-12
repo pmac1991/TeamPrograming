@@ -22,10 +22,10 @@
 <body>
     <div id="main">
         <div id="header">
-           <center> <h1><a href="#">Login</a></h1> </center>
+            <h1><a href="#">Login</a></h1>
         </div>
         <div id="menu">
-            <ul><!--  
+            <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About us</a></li>
                 <li><a href="http://localhost:8080/TotalService/firms">Firms</a></li>
@@ -33,7 +33,7 @@
                 <li><a href="#">Contact Us</a></li>
                <li><a href="http://localhost:8080/TotalService/login">Login</a></li>
                
-				-->
+				
                 
             </ul>
         </div>
@@ -70,21 +70,15 @@ password:<br>
                     
                     <h2></h2>
                     <div class="box">
-                    <ul>
-                        <li><a href="Registration.html">Registration as a user</a></li>
-                    </ul>
-                      <ul>
-                        <li><a href="Registrationfirm.html">Registration as a firm</a></li>
-                    </ul>
-                        
-                        
+                        <p></p>
+                        <ul>
                             
-                        
+                        </ul>
                         <p> </p>
                     </div>
                     <h2></h2>
                     <div class="box">
-                         
+                        <p></p>
                     </div>
             </div></div>
             <div class="clearing">&nbsp;</div>

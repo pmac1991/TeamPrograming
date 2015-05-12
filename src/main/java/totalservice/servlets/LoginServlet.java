@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 			
 
 		      // Actual logic goes here.
-			request.setAttribute("title", "Login Piotr");			
+			request.setAttribute("title", "Login");			
 			request.getRequestDispatcher("/WEB-INF/Login.jsp").forward(request, response);
 		}
 
