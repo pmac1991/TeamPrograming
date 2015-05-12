@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package totalservice.models.user;
 
 import java.util.Date;
