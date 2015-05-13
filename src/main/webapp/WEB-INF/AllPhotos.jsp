@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="site.css" rel="stylesheet">
 <title>All photos</title>
 </head>
 <body>
