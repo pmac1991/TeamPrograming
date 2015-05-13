@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<link href="site.css" rel="stylesheet">
+<title>Register your firm</title>
 </head>
 <body>
 <form action="Registerfirm" method="POST">
