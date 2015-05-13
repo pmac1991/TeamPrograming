@@ -71,10 +71,10 @@ password:<br>
                     <h2></h2>
                     <div class="box">
                     <ul>
-                        <li><a href="Registration.html">Registration as a user</a></li>
+                        <li><a href="Registeruser">Registration as a user</a></li>
                     </ul>
                       <ul>
-                        <li><a href="Registrationfirm.html">Registration as a firm</a></li>
+                        <li><a href="Registerfirm">Registration as a firm</a></li>
                     </ul>
                         
                         
