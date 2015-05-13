@@ -14,7 +14,7 @@ public interface DataProvider {
 	public void deletUser(int id);
 	
 	public List<Firm> selectFirm(String query) throws SQLException;
-	boolean addFirm(Firm user);
+	boolean addFirm(Firm user) throws SQLException;
 	boolean editFirm(Firm user,int id);
 	public void deletFirm(int id);
 

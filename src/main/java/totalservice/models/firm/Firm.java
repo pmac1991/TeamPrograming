@@ -3,6 +3,7 @@ package totalservice.models.firm;
 
 public class Firm {
 	
+	private int Id;
 	private String name;
 	private String email;
 	private String password;
@@ -59,6 +60,12 @@ public class Firm {
 	}
 	public void setRate(int rate) {
 		this.rate = rate;
+	}
+	public int getId() {
+		return Id;
+	}
+	public void setId(int id) {
+		Id = id;
 	}
 	 
 	 

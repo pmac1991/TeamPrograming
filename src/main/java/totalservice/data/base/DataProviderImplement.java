@@ -145,8 +145,13 @@ public class DataProviderImplement implements DataProvider {
 //		firms.add(firm2);
 		return firms;
 	}
-	public boolean addFirm(Firm user) {
-		// TODO Auto-generated method stub
+	public boolean addFirm(Firm firm) throws SQLException {
+		String query = "insert into totalservice.firms values( " + Integer.toString(firm.getId()) + 
+				", '" + firm.getName() + "', '" + firm.getEmail() + "', '" + firm.getPassword() + "', '" + firm.getTelephone() + "', '" +
+				 firm.getAddress() + "', '" + firm.getBranch() + "', '" + firm.getDescription() + "', " +   "0 );";
+		Statement statement = connection.createStatement();
+		//ResultSet resultSet = statement.executeQuery(query);
+		int resultSet = statement.executeUpdate(query);
 		return false;
 	}
 	public boolean editFirm(Firm user, int id) {

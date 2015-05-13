@@ -68,7 +68,8 @@ public class RegisterFirmServlet  extends HttpServlet {
 				writer.println("User already exists!");
 			}
 			else{
-				
+				incomingFirm.setId(currFirms.size() + 1);
+				dp.addFirm(incomingFirm);
 				
 				writer.println("Operation succesfull!");
 			}
