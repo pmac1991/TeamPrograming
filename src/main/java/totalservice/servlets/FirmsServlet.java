@@ -22,7 +22,7 @@ public class FirmsServlet  extends HttpServlet {
 			
 			try {
 				request.setAttribute("firms", dpi.selectFirm(""));
-				List<User> users=dpi.selectUser("");
+				//List<User> users=dpi.selectUser("");
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

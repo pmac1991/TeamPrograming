@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -64,7 +64,30 @@
                     <div class="box">
                         <p></p>
                         <ul>
-                            
+                        <table>
+                        	<tr>
+	                        	<tr>
+	                        	${firms[0].getName()}  
+	                        	</tr>
+	                        	<tr>
+	                        	${firms[0].getEmail()}  
+	                        	</tr>
+	                        	<tr>
+	                        	${firms[0].getDescription()}  
+	                        	</tr>
+                        	</tr>
+                        	<tr>
+	                        	<tr>
+	                        	${firms[1].getName()}  
+	                        	</tr>
+	                        	<tr>
+	                        	${firms[1].getEmail()}  
+	                        	</tr>
+	                        	<tr>
+	                        	${firms[1].getDescription()}  
+	                        	</tr>
+                        	</tr>
+                        </table> 
                         </ul>
                         <p> </p>
                     </div>
