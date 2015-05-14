@@ -21,7 +21,7 @@ public class FirmsServlet  extends HttpServlet {
 			//response.setContentType("text/html");
 			
 			try {
-				request.setAttribute("firms", dpi.selectFirm(""));
+				request.setAttribute("firms", dpi.selectFirms(""));
 				//List<User> users=dpi.selectUser("");
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

@@ -62,7 +62,7 @@ public class RegisterFirmServlet  extends HttpServlet {
 		List<Firm> currFirms = new ArrayList<Firm>();
 		
 		try {
-			currFirms = dp.selectFirm("");
+			currFirms = dp.selectFirms("");
 			if(currFirms.contains(incomingFirm)){
 				
 				writer.println("User already exists!");
