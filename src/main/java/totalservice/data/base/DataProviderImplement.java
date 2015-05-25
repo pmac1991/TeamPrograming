@@ -40,7 +40,7 @@ public class DataProviderImplement implements DataProvider {
 		return dataProviderImplement;
 	}
 	
-	public List<User> selectUser(String query) throws SQLException {
+	public List<User> selectUsers(String query) throws SQLException {
 		// TODO Auto-generated method stub
 		List<User> result = new ArrayList<User>();
 		
@@ -72,6 +72,11 @@ public class DataProviderImplement implements DataProvider {
 		
 		return result;
 	}
+	public User loginUser() {
+		
+		return null;
+	}
+
 	public boolean addUser(User user) throws SQLException {
 		// TODO Auto-generated method stub
 		
@@ -80,8 +85,8 @@ public class DataProviderImplement implements DataProvider {
 				+ user.getTelephoneNom() + "', " + "0 " + ");";//user.getDateOfBorn().toString() + ");";
 		Statement statement = connection.createStatement();
 		//ResultSet resultSet = statement.executeQuery(query);
-		int resultSet = statement.executeUpdate(query);
-		return false;
+		statement.executeUpdate(query);
+		return true;
 	}
 	public boolean editUser(User user, int id) {
 		// TODO Auto-generated method stub
@@ -91,7 +96,7 @@ public class DataProviderImplement implements DataProvider {
 		// TODO Auto-generated method stub
 		
 	}
-	public List<Firm> selectFirm(String query) throws SQLException {
+	public List<Firm> selectFirms(String query) throws SQLException {
 		List<Firm> firms = new ArrayList<Firm>();
 		
 		Firm firm1 = new Firm();
@@ -122,31 +127,15 @@ public class DataProviderImplement implements DataProvider {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//		query="select * from totalservice.firms";
-//		Statement statement = connection.createStatement();
-//		ResultSet resultSet = statement.executeQuery(query);
-		
-//		firms.add(firm);
-//		firm1.setAddress("Lodz Inne");
-//		firm1.setBranch("car crash");
-//		firm1.setDescription("the best of the best");
-//		firm1.setEmail("car@crash.com");
-//		firm1.setName("Destract");		
-//		firm1.setRate(5);
-//		firm1.setTelephone("22222222222");
-//		firms.add(firm1);
-//		firm2.setAddress("Lodz");
-//		firm2.setBranch("car car");
-//		firm2.setDescription("the best of the best of the best");
-//		firm2.setEmail("best@best.com");
-//		firm2.setName("Krow");		
-//		firm2.setRate(5);
-//		firm2.setTelephone("33333333333333333");
-//		firms.add(firm2);
 		return firms;
 	}
-	public boolean addFirm(Firm user) {
-		// TODO Auto-generated method stub
+	public boolean addFirm(Firm firm) throws SQLException {
+		String query = "insert into totalservice.firms values( " + Integer.toString(firm.getId()) + 
+				", '" + firm.getName() + "', '" + firm.getEmail() + "', '" + firm.getPassword() + "', '" + firm.getTelephone() + "', '" +
+				 firm.getAddress() + "', '" + firm.getBranch() + "', '" + firm.getDescription() + "', " +   "0 );";
+		Statement statement = connection.createStatement();
+		//ResultSet resultSet = statement.executeQuery(query);
+		int resultSet = statement.executeUpdate(query);
 		return false;
 	}
 	public boolean editFirm(Firm user, int id) {
@@ -157,6 +146,7 @@ public class DataProviderImplement implements DataProvider {
 		// TODO Auto-generated method stub
 		
 	}
+	
 	
 	
 }

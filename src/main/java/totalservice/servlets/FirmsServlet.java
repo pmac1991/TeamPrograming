@@ -1,3 +1,4 @@
+
 package totalservice.servlets;
 
 import java.io.IOException;
@@ -17,11 +18,11 @@ public class FirmsServlet  extends HttpServlet {
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			// TODO Auto-generated method stub
 			DataProviderImplement dpi = new DataProviderImplement().getInstance();
-			response.setContentType("text/html");
+			//response.setContentType("text/html");
 			
 			try {
-				request.setAttribute("firms", dpi.selectFirm(""));
-				List<User> users=dpi.selectUser("");
+				request.setAttribute("firms", dpi.selectFirms(""));
+				//List<User> users=dpi.selectUser("");
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

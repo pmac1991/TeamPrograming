@@ -58,7 +58,7 @@ public class RegisterUserServlet extends HttpServlet {
 		List<User> currUsers = new ArrayList<User>();
 		
 		try {
-			currUsers = dp.selectUser("");
+			currUsers = dp.selectUsers("");
 			if(currUsers.contains(incomingUser)){
 				
 				writer.println("User already exists!");
