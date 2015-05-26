@@ -1,25 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="language" content="en" />
-   
-   
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="site.css" rel="stylesheet">
-<title>Hello my friend!!!</title>
-    
+<title>Insert title here</title>
+<style>
+table, td, th {
+    border: 2px solid green;
+}
+
+th {
+    background-color: green;
+    color: white;
+}
+</style>
 </head>
-
-
 <body>
     <div id="main">
         <div id="header">
@@ -61,7 +60,7 @@
                     </div>
                     
                     <h2></h2>
-                    <div class="box">
+                   <!--   <div class="box">
                         <p></p>
                         <ul>
                         <table>
@@ -90,7 +89,67 @@
                         </table> 
                         </ul>
                         <p> </p>
-                    </div>
+                    </div> -->
+                    <div class="CSSTableGenerator" >
+              		  <table >
+                   		 <tr >
+                       	  <td >
+                            <font size="6"><b>Name</b></font>
+                          </td>
+                          <td >
+                            <font size="6"><b>Email</b></font>
+                          </td>
+                          <td >
+                            <font size="6"><b>Description</b></font>
+                          </td>
+                         </tr >
+                    <tr >
+                        <td >
+                           <font size="4"> ${firms[0].getName()}</font>
+                        </td>
+                        <td >
+                         <font size="4">   ${firms[0].getEmail()} </font>
+                        </td>
+                        <td >
+                          <font size="4">  ${firms[0].getDescription()}</font>
+                        </td>
+                    </tr>
+                    <tr >
+                        <td >
+                           <font size="4"> ${firms[1].getName()}</font>
+                        </td>
+                        <td >
+                          <font size="4">  ${firms[1].getEmail()} </font>
+                        </td>
+                        <td >
+                          <font size="4">  ${firms[1].getDescription()}</font>
+                        </td>
+                    </tr>
+                    <tr >
+                        <td >
+                          <font size="4">  ${firms[2].getName()}</font>
+                        </td>
+                        <td>
+                           <font size="4"> ${firms[2].getEmail()} </font>
+                        </td>
+                        <td>
+                            <font size="4">${firms[2].getDescription()}</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            <font size="4">${firms[3].getName()}</font>
+                        </td>
+                        <td>
+                           <font size="4"> ${firms[3].getEmail()} </font>
+                        </td>
+                        <td>
+                            <font size="4">${firms[3].getDescription()}</font>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
                     <h2></h2>
                     <div class="box">
                         <p></p>
@@ -104,20 +163,3 @@
     </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
