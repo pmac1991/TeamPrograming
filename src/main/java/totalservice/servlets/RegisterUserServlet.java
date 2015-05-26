@@ -13,8 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.http.HttpServerConnection;
 
+import com.amazonaws.services.datapipeline.model.ValidationError;
+
 import totalservice.data.base.DataProviderImplement;
 import totalservice.models.user.User;
+import totalservice.utilities.ValidationException;
 
 public class RegisterUserServlet extends HttpServlet {
 	
@@ -43,8 +46,21 @@ public class RegisterUserServlet extends HttpServlet {
 		User incomingUser = new User();
 		incomingUser.setName(name);
 		incomingUser.setSername(surname);
-		incomingUser.setTelephoneNom(telephone);
-		incomingUser.setEmail(email);
+		
+		try {
+			incomingUser.setTelephoneNom(telephone);
+		} catch (ValidationException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		try {
+			incomingUser.setEmail(email);
+		} catch (ValidationException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		incomingUser.setPasswrd(passwrd);
 		
 		PrintWriter writer = response.getWriter();
@@ -70,7 +86,11 @@ public class RegisterUserServlet extends HttpServlet {
 				
 				writer.println("Operation succesfull!");
 			}
-		} catch (SQLException e) {
+		} catch (ValidationException e1){
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+			writer.println(e1.getMessage());
+		}catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			writer.println(e.getMessage());

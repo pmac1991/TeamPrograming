@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import totalservice.utilities.*;
+
 public class User {
 	private String name;
 	private String sername;
@@ -45,12 +47,12 @@ public class User {
 	public String getTelephoneNom() {
 		return telephoneNom;
 	}
-	public void setTelephoneNom(String telephoneNom) {
+	public void setTelephoneNom(String telephoneNom) throws ValidationException {
 		if(validateTelephone(telephoneNom)){
 			this.telephoneNom = telephoneNom;
 		}
 		else{
-			//TODO throw exception?
+			throw new ValidationException("telephone");
 		}	
 	}
 	private boolean validateTelephone(final String hex) { 
@@ -68,13 +70,13 @@ public class User {
 	public String getEmail() {
 		return email;
 	}
-	public void setEmail(String email) {
+	public void setEmail(String email) throws ValidationException {
 		
 		if(validateEmail(email)){
 			this.email = email;	
 		}
 		else{
-			//TODO throw exception?
+			throw new ValidationException("email");
 		}		
 	}
 	

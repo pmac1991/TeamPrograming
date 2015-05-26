@@ -10,6 +10,7 @@ import java.util.List;
 
 import totalservice.models.firm.Firm;
 import totalservice.models.user.User;
+import totalservice.utilities.ValidationException;
 
 public class DataProviderImplement implements DataProvider {
 	private static String URL = "jdbc:mysql://localhost:3306/totalservice";
@@ -40,7 +41,7 @@ public class DataProviderImplement implements DataProvider {
 		return dataProviderImplement;
 	}
 	
-	public List<User> selectUsers(String query) throws SQLException {
+	public List<User> selectUsers(String query) throws SQLException, ValidationException {
 		// TODO Auto-generated method stub
 		List<User> result = new ArrayList<User>();
 		
@@ -96,7 +97,7 @@ public class DataProviderImplement implements DataProvider {
 		// TODO Auto-generated method stub
 		
 	}
-	public List<Firm> selectFirms(String query) throws SQLException {
+	public List<Firm> selectFirms(String query) throws SQLException, ValidationException {
 		List<Firm> firms = new ArrayList<Firm>();
 		
 		Firm firm1 = new Firm();
@@ -114,10 +115,11 @@ public class DataProviderImplement implements DataProvider {
     		firm.setBranch("car fix");
     		firm.setDescription("the best");
     		
-				firm.setEmail(resultSet.getString("email").toString());
+			firm.setEmail(resultSet.getString("email").toString());
 			
     		firm.setName(resultSet.getString("name"));		
     		firm.setRate(5);
+    		
     		firm.setTelephone(resultSet.getString("telephone"));
             
     		firms.add(firm);

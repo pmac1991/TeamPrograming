@@ -1,11 +1,11 @@
 package totalservice.servlets;
 
 import java.io.IOException;
-
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 
 import javax.servlet.ServletException;
@@ -14,9 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
+
 import totalservice.data.base.DataProviderImplement;
 import totalservice.models.firm.Firm;
 import totalservice.models.user.User;
+import totalservice.utilities.ValidationException;
 
 public class RegisterFirmServlet  extends HttpServlet {
 	
@@ -46,8 +48,21 @@ public class RegisterFirmServlet  extends HttpServlet {
 		
 		Firm incomingFirm = new Firm();
 		incomingFirm.setName(name);
-		incomingFirm.setEmail(email);
-		incomingFirm.setTelephone(telephone);
+		
+		try {
+			incomingFirm.setEmail(email);
+		} catch (ValidationException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		try {
+			incomingFirm.setTelephone(telephone);
+		} catch (ValidationException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		incomingFirm.setPassword(passwrd);
 		incomingFirm.setAddress(address);
 		incomingFirm.setBranch(branch);
@@ -73,7 +88,10 @@ public class RegisterFirmServlet  extends HttpServlet {
 				
 				writer.println("Operation succesfull!");
 			}
-		} catch (SQLException e) {
+		} catch (ValidationException e){
+			e.printStackTrace();
+			writer.println(e.getMessage());
+		}catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			writer.println(e.getMessage());

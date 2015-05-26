@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import totalservice.data.base.DataProviderImplement;
 import totalservice.models.user.User;
+import totalservice.utilities.ValidationException;
 		
 public class FirmsServlet  extends HttpServlet {
 		
@@ -21,7 +22,12 @@ public class FirmsServlet  extends HttpServlet {
 			//response.setContentType("text/html");
 			
 			try {
-				request.setAttribute("firms", dpi.selectFirms(""));
+				try {
+					request.setAttribute("firms", dpi.selectFirms(""));
+				} catch (ValidationException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				//List<User> users=dpi.selectUser("");
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
