@@ -8,7 +8,46 @@
 <title>Register your firm</title>
 </head>
 <body>
-<form action="Registerfirm" method="POST">
+    <div id="main">
+        <div id="header">
+            <h1><a href="#">Login</a></h1>
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="http://localhost:8080/TotalService/firms">Firms</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Contact Us</a></li>
+               <li><a href="http://localhost:8080/TotalService/login">Login</a></li>
+               
+				
+                
+            </ul>
+        </div>
+        <div id="middle">
+            <div id="sidebar"><div id="sidebar2">
+                    <h2> </h2>
+                    <ul>
+                                           
+                    </ul>
+                    <h2> </h2>
+                    <ul>
+                        
+                    </ul>
+                    <h2></h2>
+                    <ul>
+                        
+                        
+                    </ul>
+            </div></div>
+            <div id="right"><div id="right2">
+                    <h2>  </h2>
+                    <div class="box">
+                        <p></p>
+                    </div>
+                    
+                                        <h2> <form action="Registerfirm" method="POST">
 Name: <input type="text" name="name">
 <br />
 E-mail: <input type="text" name="email" />
@@ -24,6 +63,27 @@ Branch: <input type="text" name="branch" />
 Description: <input type="text" name="description" />
 <br />
 <input type="submit" value="Submit" />
-</form>
+</form></h2>
+                    
+                    
+                    <h2></h2>
+                    <div class="box">
+                        <p></p>
+                        <ul>
+                            
+                        </ul>
+                        <p> </p>
+                    </div>
+                    <h2></h2>
+                    <div class="box">
+                        <p></p>
+                    </div>
+            </div></div>
+            <div class="clearing">&nbsp;</div>
+        </div>
+        <div id="footer">
+            <p>Copyright &copy; Your Name, designed by <a href="http://www.alphastudio.pl" target="_blank">Alpha Studio</a></p>
+        </div>
+    </div>
 </body>
 </html>
