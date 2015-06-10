@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import = "java.util.Map" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -7,22 +9,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="site.css" rel="stylesheet">
-<title>Insert title here</title>
-<style>
-table, td, th {
-    border: 2px solid green;
-}
 
-th {
-    background-color: green;
-    color: white;
-}
-</style>
+<title>Insert title here</title>
+
 </head>
 <body>
+
     <div id="main">
-        <div id="header">
-            <h1><a href="#">Firms</a></h1>
+        <div id="header" >
+           <center><h1><a href="#">Firms</a></h1></center>
         </div>
         <div id="menu">
             <ul>
@@ -60,96 +55,89 @@ th {
                     </div>
                     
                     <h2></h2>
-                   <!--   <div class="box">
-                        <p></p>
-                        <ul>
-                        <table>
-                        	<tr>
-	                        	<tr>
-	                        	${firms[0].getName()}  
-	                        	</tr>
-	                        	<tr>
-	                        	${firms[0].getEmail()}  
-	                        	</tr>
-	                        	<tr>
-	                        	${firms[0].getDescription()}  
-	                        	</tr>
-                        	</tr>
-                        	<tr>
-	                        	<tr>
-	                        	${firms[1].getName()}  
-	                        	</tr>
-	                        	<tr>
-	                        	${firms[1].getEmail()}  
-	                        	</tr>
-	                        	<tr>
-	                        	${firms[1].getDescription()}  
-	                        	</tr>
-                        	</tr>
-                        </table> 
-                        </ul>
-                        <p> </p>
-                    </div> -->
-                    <div class="CSSTableGenerator" >
-              		  <table >
+                   <div class="CSSTablepc" >
+<table>
                    		 <tr >
                        	  <td >
-                            <font size="6"><b>Name</b></font>
+                            <font size="5"><b>Name</b></font>
                           </td>
                           <td >
-                            <font size="6"><b>Email</b></font>
+                            <font size="5"><b>Email</b></font>
                           </td>
                           <td >
-                            <font size="6"><b>Description</b></font>
+                            <font size="5"><b>Description</b></font>
+                          </td>
+                                                    <td >
+                              Choose
                           </td>
                          </tr >
-                    <tr >
-                        <td >
-                           <font size="4"> ${firms[0].getName()}</font>
-                        </td>
-                        <td >
-                         <font size="4">   ${firms[0].getEmail()} </font>
-                        </td>
-                        <td >
-                          <font size="4">  ${firms[0].getDescription()}</font>
-                        </td>
-                    </tr>
-                    <tr >
-                        <td >
-                           <font size="4"> ${firms[1].getName()}</font>
-                        </td>
-                        <td >
-                          <font size="4">  ${firms[1].getEmail()} </font>
-                        </td>
-                        <td >
-                          <font size="4">  ${firms[1].getDescription()}</font>
-                        </td>
-                    </tr>
-                    <tr >
-                        <td >
-                          <font size="4">  ${firms[2].getName()}</font>
-                        </td>
-                        <td>
-                           <font size="4"> ${firms[2].getEmail()} </font>
-                        </td>
-                        <td>
-                            <font size="4">${firms[2].getDescription()}</font>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <font size="4">${firms[3].getName()}</font>
-                        </td>
-                        <td>
-                           <font size="4"> ${firms[3].getEmail()} </font>
-                        </td>
-                        <td>
-                            <font size="4">${firms[3].getDescription()}</font>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            
+<c:forEach  var="i" begin="1" end="${firms.size()}">
+
+<tr>
+         
+             <td ><font size="4"><c:out value="${firms[i-1].getName()}"/></font></td>
+  			 <td ><font size="4"><c:out value="${firms[i-1].getEmail()}"/></font></td>
+  	         <td ><font size="4"><c:out value="${firms[i-1].getDescription()}"/></font></td>
+                                    <td>
+                            <input type="checkbox" name="vehicle" value="Bike"> <br>
+                          </td>
+
+</tr>
+</c:forEach>
+</table>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="CSSTablepc" >
+<table>
+                   		 <tr >
+                       	  <td >
+                            <font size="5"><b>Name</b></font>
+                          </td>
+                          <td >
+                            <font size="5"><b>Email</b></font>
+                          </td>
+                          <td >
+                            <font size="5"><b>Description</b></font>
+                          </td>
+                         </tr >
+<c:forEach  var="i" begin="1" end="${firms.size()}" varStatus="counter">
+<c:set var="number1" value="${firms[i-1].getName()}"/>
+<c:set var="number2" value="aaa"/>
+<c:choose>
+ <c:when test="${number1 == number2}">
+     <tr>
+         
+             <td ><font size="4"><c:out value="${firms[i-1].getName()}"/></font></td>
+  			 <td ><font size="4"><c:out value="${firms[i-1].getEmail()}"/></font></td>
+  	         <td ><font size="4"><c:out value="${firms[i-1].getDescription()}"/></font></td>
+          
+
+</tr>
+ </c:when>
+</c:choose>
+</c:forEach>
+</table>
+</div>
+<br>
+                        <center><h2>Message</h2></center><br>
+
+
+                     
+                      <center><textarea rows="10" cols="60"></textarea></center>
+
+                        <br>
+
+                        <center>  <button type="button" value="Send">Send</button></center>
+		</div>	 
+		<br>
+
+  
                     <h2></h2>
                     <div class="box">
                         <p></p>

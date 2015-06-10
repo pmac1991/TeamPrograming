@@ -14,7 +14,7 @@ import totalservice.models.user.User;
 public class DataProviderImplement implements DataProvider {
 	private static String URL = "jdbc:mysql://localhost:3306/totalservice";
 	private static String USER = "root";
-	private static String PASS = "weeia1991";
+	private static String PASS = "qwaszx";
 	private static Connection connection = null;
 	private static  DataProviderImplement dataProviderImplement;
 	
