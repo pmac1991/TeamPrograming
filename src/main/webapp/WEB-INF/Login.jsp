@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
-
+<%-- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> --%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -58,14 +58,17 @@
                     <div class="box">
                         <p></p>
                     </div>
-                    
-                                        <h2> <form action="">
-Login:<br>
-<input type="text" name="login">
-<br>
-password:<br>
-<input type="text" name="password">
-</form></h2>
+ 
+		<form action="login" method="post">
+			<h2>Login:</h2><br>
+				<input type="text" name="login"><br>
+			password:<br>
+				<input type="text" name="password">
+				<input type="submit" name="login" value="Enter">
+			
+				${loginError}
+			
+		</form>
                     
                     
                     <h2></h2>
